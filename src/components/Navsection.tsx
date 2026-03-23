@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useUser } from "../types/user";
-import { ClipboardTaskRegular, PersonRegular, SignOut20Regular } from '@fluentui/react-icons';
+import { ClipboardTaskRegular, PersonRegular, SignOut20Regular, Search20Regular } from '@fluentui/react-icons';
 import './navsection.css';
 import { Link } from 'react-router-dom';
 
@@ -34,12 +34,21 @@ export default function Navsection({ onSearchChange, handleLogout }: NavsectionP
           <h4>Task Manager</h4>
         </div>
 
-        <input
-          type="text"
-          className="search"
-          placeholder="Search tasks"
-          onChange={(e) => onSearchChange(e.target.value)}
-        />
+<div style={{ position: 'relative', flex: 1, maxWidth: '25%' }}>
+  <Search20Regular 
+    style={{ 
+      position: 'absolute', left: '1.2rem', top: '50%', 
+      transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.6)',
+      fontSize: '1.6rem', pointerEvents: 'none'
+    }} 
+  />
+  <input
+    type="text"
+    className="search"
+    placeholder="Search tasks..."
+    onChange={(e) => onSearchChange(e.target.value)}
+  />
+</div>
 
         <div className="user-nav" ref={dropdownRef}>
           { user ? (

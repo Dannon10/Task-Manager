@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    /* padding: 2rem; */
     height: 100dvh;
 }
 
@@ -11,6 +12,8 @@
     padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .title {
@@ -22,6 +25,14 @@
 .login-header {
     font-size: 3rem;
     margin: 2rem 0;
+    text-align: center;
+}
+
+.sign-in-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 8rem;
 }
 
 .sign-in-info {
@@ -40,7 +51,7 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    width: 100%;
+    margin-top: 3rem;
 }
 
 input[type="text"],
@@ -48,17 +59,17 @@ input[type="password"],
 input[type="email"] {
     border: 1px solid #ccc;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 1.25rem;
+    width: 30rem;
 }
 
 .username-input,
 .password-input,
 .email-input {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     height: 6rem;
     border: 1px solid #ccc;
     border-radius: 1rem;
-    width: 100%;
 }
 
 input[type="text"]:focus,
@@ -86,23 +97,16 @@ input[type="email"]:focus {
 }
 
 @media(min-width: 768px) {
-    .login-page-container {
-        height: auto;
-    }
 
     .title {
         font-size: 5rem;
-    }
-
-    .login-header {
-        font-size: 4rem;
     }
 
     .username-input,
     .password-input,
     .email-input {
         font-size: 1.75rem;
-        height: 5.5rem;
+        padding: 1.25rem;
     }
 
 }
@@ -117,15 +121,17 @@ input[type="email"]:focus {
         font-size: 4rem;
     }
 
-    .login-header {
-        font-size: 3rem;
-    }
+    input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 40rem;
+}
 
     .username-input,
     .password-input,
     .email-input {
         font-size: 1.85rem;
-        height: 5rem;
+        /* height: 5rem; */
     }
 }
 
@@ -133,6 +139,12 @@ input[type="email"]:focus {
     .title {
         font-size: 5rem;
     }
+
+        input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 50rem;
+}
 
     .login-header {
         font-size: 3.3rem;

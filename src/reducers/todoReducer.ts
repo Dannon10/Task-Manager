@@ -6,26 +6,33 @@ interface TodoAction {
 }
 
 const initialState: Todo[] = [];
+const ACTIONS = {
+  ADD_TODO: 'ADD_TODO',
+  TOGGLE_TODO: 'TOOGLE_TODO',
+  EDIT_TODO: 'EDIT_TODO',
+  DELETE_TODO: 'DELETE_TOD0',
+  REORDER_TODOS: 'REORDER_TODOS'
+}
 
 export const todoReducer = (state = initialState, action: TodoAction): Todo[] => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case ACTIONS.ADD_TODO:
       return [...state, action.payload];
-    case 'TOGGLE_TODO':
+    case ACTIONS.TOGGLE_TODO:
       return state.map((todo) =>
         todo.id === action.payload.id
           ? { ...todo, completed: !todo.completed }
           : todo
       );
-    case 'EDIT_TODO':
+    case ACTIONS.EDIT_TODO:
       return state.map((todo) =>
         todo.id === action.payload.id
           ? { ...todo, ...action.payload.updatedTodo }
           : todo
       );
-    case 'DELETE_TODO':
+    case ACTIONS.DELETE_TODO:
       return state.filter((todo) => todo.id !== action.payload);
-    case 'REORDER_TODOS':
+    case ACTIONS.REORDER_TODOS:
       const reordered = Array.from(state);
       const [removed] = reordered.splice(action.payload.startIndex, 1);
       reordered.splice(action.payload.endIndex, 0, removed);

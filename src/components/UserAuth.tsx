@@ -69,6 +69,9 @@ export default function UserAuth() {
           {error}
         </div>
       )}
+
+      <form action="" className="sign-in-form">
+
       <input
         type="text"
         placeholder="Username"
@@ -76,7 +79,7 @@ export default function UserAuth() {
         onChange={(e) => setName(e.target.value)}
         required
         className="username-input"
-      />
+        />
       <input
         type="email"
         placeholder="example@gmail.com"
@@ -93,12 +96,13 @@ export default function UserAuth() {
         required
         className="password-input"
       />
-      <button onClick={handleLogin} className="btn btn-login">
+      <button type="button" onClick={handleLogin} className="btn btn-login">
         Login
       </button>
-      <button onClick={handleRegister} className="btn btn-register">
+      <button type="button" onClick={handleRegister} className="btn btn-register">
         Register
       </button>
+        </form>
     </div>
   );
 }

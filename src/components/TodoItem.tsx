@@ -206,10 +206,16 @@ const TodoItem: React.FC<TodoItemProps> = ({
             </div>
           </div>
           <div className="todo-item-actions">
-            <button className="delete-btn" title="Delete" onClick={() => deleteTodo(todo.id)}>
+            <button 
+            className="delete-btn" 
+            title="Delete" 
+            onClick={() => deleteTodo(todo.id)}>
               <Delete20Regular className="delete-icon" />
             </button>
-            <button className="edit-btn" title="Edit" onClick={() => setIsEditing(true)}>
+            <button 
+            className="edit-btn" 
+            title="Edit" 
+            onClick={() => setIsEditing(true)}>
               <Edit20Regular className="edit-icon" />
             </button>
           </div>
