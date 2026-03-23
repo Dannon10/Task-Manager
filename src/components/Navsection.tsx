@@ -10,7 +10,7 @@ type NavsectionProps = {
 };
 
 export default function Navsection({ onSearchChange, handleLogout }: NavsectionProps) {
-  const { user, logout } = useUser(); 
+  const { user } = useUser(); 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 

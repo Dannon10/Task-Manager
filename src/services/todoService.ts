@@ -37,7 +37,6 @@ export const listenToTodos = (
 };
 
 export const saveTodos = async (userId: string, todos: Todo[]) => {
-  const todosRef = collection(db, "users", userId, "todos");
   const batch = writeBatch(db);
 
   todos.forEach((todo) => {

@@ -36,7 +36,7 @@ export default function Filters({ onFiltersChange }: FiltersProps) {
     if (user) {
       setFilters(initialFilterValues);
     }
-  }, [user]);
+  }, [user, setFilters]);
 
   const updateFilters = (updates: Partial<FilterValues>) => {
     setFilters((prev) => ({ ...prev, ...updates }));
